@@ -1,0 +1,65 @@
+*
+{
+    box-sizing: border-box;
+    font-family: monospace;
+
+    --BurntOrage: #D35100;
+    --ChineseBlack: #151515;
+}
+
+#main
+{
+    margin: 0;
+
+    color: var(--BurntOrage);
+    background-color: var(--ChineseBlack);
+}
+
+#navbar
+{
+    overflow: hidden;
+    text-align: center;
+
+    border-bottom: 1px dashed orange;
+}
+
+.navBtn
+{
+    float: left;
+    display: block;
+
+    padding: 1% 1%;
+    border: 1px ;
+
+    cursor: crosshair;
+    font-weight: bold;
+    font-size: large;
+    transition: .2s ease-in-out;
+}
+
+.navBtn:hover
+{
+    border-radius: 2vh;
+
+    background-color: white;
+    color: black;
+}
+
+#content
+{
+    padding: 1% 1%;
+
+    text-align: center;
+}
+
+#footer
+{
+    text-align: center;
+
+    padding-top: 1%;
+    padding-bottom: 3%;
+    border-top: 1px dashed orange;
+
+    font-weight: bold;
+    font-size: large;
+}
