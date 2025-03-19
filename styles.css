@@ -3,8 +3,10 @@
     box-sizing: border-box;
     font-family: monospace;
 
-    --BurntOrage: #D35100;
-    --ChineseBlack: #151515;
+    --ChineseBlack:                #151515;
+    --BurntOrage:                  #D35100;
+    --UniversityOfTennesseeOrange: #F07900;
+    --RoyalOrange:                 #F8A145;
 }
 
 #main
@@ -19,8 +21,6 @@
 {
     overflow: hidden;
     text-align: center;
-
-    border-bottom: 1px dashed orange;
 }
 
 .navBtn
@@ -29,7 +29,7 @@
     display: block;
 
     padding: 1% 1%;
-    border: 1px ;
+    border: .15vh solid var(--UniversityOfTennesseeOrange);
 
     cursor: crosshair;
     font-weight: bold;
@@ -48,6 +48,8 @@
 #content
 {
     padding: 1% 1%;
+    border-top: .2vh dashed var(--UniversityOfTennesseeOrange);
+    border-bottom: .2vh dashed var(--UniversityOfTennesseeOrange);
 
     text-align: center;
 }
@@ -58,7 +60,6 @@
 
     padding-top: 1%;
     padding-bottom: 3%;
-    border-top: 1px dashed orange;
 
     font-weight: bold;
     font-size: large;
