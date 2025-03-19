@@ -7,6 +7,42 @@
     --BurntOrage:                  #D35100;
     --UniversityOfTennesseeOrange: #F07900;
     --RoyalOrange:                 #F8A145;
+
+    --NavBtnsFontSize: 1.5em;
+    --ContentFontSize: 1em;
+    --FooterFontSize: 2em;
+}
+
+#marquee
+{
+    overflow: hidden;
+    white-space: nowrap;
+
+    margin: 1vh;
+
+    font-size: 1em;
+
+    #dtText
+    {
+        display: inline-block;
+        padding-left: 100%;
+        text-indent: 0;
+
+        font-size: 1em;
+
+        animation: marquee .05s linear infinite;
+    }
+
+    #dtText:hover
+    {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes marquee
+{
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
 }
 
 #main
@@ -21,28 +57,29 @@
 {
     overflow: hidden;
     text-align: center;
-}
 
-.navBtn
-{
-    float: left;
-    display: block;
+    .navBtn
+    {
+        float: left;
+        display: block;
 
-    padding: 1% 1%;
-    border: .15vh solid var(--UniversityOfTennesseeOrange);
+        padding: 1% 1%;
+        border: .15vh solid var(--UniversityOfTennesseeOrange);
 
-    cursor: crosshair;
-    font-weight: bold;
-    font-size: large;
-    transition: .2s ease-in-out;
-}
+        cursor: crosshair;
+        font-weight: bold;
+        font-size: var(--NavBtnsFontSize);
+        transition: .2s ease-in-out;
+    }
 
-.navBtn:hover
-{
-    border-radius: 2vh;
+    .navBtn:hover
+    {
+        border-radius: 2vh;
 
-    background-color: white;
-    color: black;
+        border-color: white;
+        background-color: white;
+        color: black;
+    }
 }
 
 #content
@@ -51,6 +88,7 @@
     border-top: .2vh dashed var(--UniversityOfTennesseeOrange);
     border-bottom: .2vh dashed var(--UniversityOfTennesseeOrange);
 
+    font-size: var(--ContentFontSize);
     text-align: center;
 }
 
@@ -62,5 +100,5 @@
     padding-bottom: 3%;
 
     font-weight: bold;
-    font-size: large;
+    font-size: var(--FooterFontSize);
 }
