@@ -4,10 +4,16 @@
     font-family: monospace;
 
     --ChineseBlack:                #151515;
+    
     --BurntOrage:                  #D35100;
     --UniversityOfTennesseeOrange: #F07900;
     --RoyalOrange:                 #F8A145;
-
+    
+    /*
+    --BurntOrage:                  blue;
+    --UniversityOfTennesseeOrange: lightblue;
+    --RoyalOrange:                 teal;
+    */
     --NavBtnsFontSize: 1.5em;
     --ContentFontSize: 1em;
     --FooterFontSize: 2em;
@@ -30,7 +36,7 @@
 
         font-size: 1em;
 
-        animation: marquee .05s linear infinite;
+        animation: marquee 15s linear infinite;
     }
 
     #dtText:hover
