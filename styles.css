@@ -1,22 +1,29 @@
 *
 {
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: 'Cabin';
 
-    --ChineseBlack:                #151515;
-    
-    --BurntOrage:                  #D35100;
-    --UniversityOfTennesseeOrange: #F07900;
-    --RoyalOrange:                 #F8A145;
-    
-    /*
-    --BurntOrage:                  blue;
-    --UniversityOfTennesseeOrange: lightblue;
-    --RoyalOrange:                 teal;
-    */
+    --Color0: black;
+    --Color1: white;
+    --Color2: white;
+    --Color3: white;
+
     --NavBtnsFontSize: 1.5em;
     --ContentFontSize: 1em;
-    --FooterFontSize: 2em;
+    --FooterFontSize: .75em;
+}
+
+#body
+{
+    margin: 0vh;
+    margin-right: 25vw;
+    margin-left: 25vw;
+
+    display: flex;
+    flex-direction: column;
+
+    color: var(--Color1);
+    background-color: var(--Color0);
 }
 
 #marquee
@@ -24,9 +31,13 @@
     overflow: hidden;
     white-space: nowrap;
 
-    margin: 1vh;
+    margin-top: 1vh;
+
+    padding-bottom: 1vh;
 
     font-size: 1em;
+
+    border-bottom: .5vh solid var(--Color2);
 
     #dtText
     {
@@ -51,12 +62,9 @@
     100% { transform: translate(-100%, 0); }
 }
 
-#body
+#myName
 {
-    margin: 0;
-
-    color: var(--BurntOrage);
-    background-color: var(--ChineseBlack);
+    font-size: 6em;
 }
 
 #navbar
@@ -64,13 +72,15 @@
     overflow: hidden;
     text-align: center;
 
+    display: flex;
+    justify-content: space-around;
+
     .navBtn
     {
         float: left;
         display: block;
 
-        padding: 1% 1%;
-        border: .15vh solid var(--UniversityOfTennesseeOrange);
+        width: 30%;
 
         cursor: crosshair;
         font-weight: bold;
@@ -80,31 +90,27 @@
 
     .navBtn:hover
     {
-        border-radius: 2vh;
+        border: .15vh dashed var(--Color2);
 
-        border-color: white;
-        background-color: white;
-        color: black;
+        border-right-width: 0vh;
+        border-left-width: 0vh;
+        color: white;
     }
 }
 
-#content
+.divider
 {
-    padding: 1% 1%;
-    border-top: .2vh dashed var(--UniversityOfTennesseeOrange);
-    border-bottom: .2vh dashed var(--UniversityOfTennesseeOrange);
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    border-top: .2vh dashed var(--Color2);
+    border-bottom: .2vh dashed var(--Color2);
 
     font-size: var(--ContentFontSize);
-    text-align: center;
 }
 
 #footer
 {
-    text-align: center;
-
-    padding-top: 1%;
-    padding-bottom: 3%;
-
     font-weight: bold;
     font-size: var(--FooterFontSize);
 }

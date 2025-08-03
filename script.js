@@ -1,5 +1,6 @@
 const body = document.getElementById("body");
     const dtText = document.getElementById("dtText");
+    const myName = document.getElementById("myName");
     const navbar = document.getElementById("navbar");
         const abtMe = document.getElementById("abtMe");
         const projects = document.getElementById("projects");
@@ -32,8 +33,6 @@ function updateMarquee(time)
 }
 requestAnimationFrame(updateMarquee);
 
-
-
 async function fetchAndSetInnerHtml(path)
 {
 	try
@@ -48,6 +47,16 @@ async function fetchAndSetInnerHtml(path)
 	}
 }
 
+fetchAndSetInnerHtml("aboutMe.html")
+
 abtMe.addEventListener("click", () => fetchAndSetInnerHtml("aboutMe.html"));
 projects.addEventListener("click", () => fetchAndSetInnerHtml("projects.html"));
 contacts.addEventListener("click", () => fetchAndSetInnerHtml("contacts.html"));
+
+const fonts = ["Arial", "Georgia", "Courier New", "Comic Sans MS", "Verdana", "Cabin"];
+let index = 0;
+setInterval(() => 
+{
+    myName.style.fontFamily = fonts[index];
+    index = (index + 1) % fonts.length;
+}, 100);
