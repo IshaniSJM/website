@@ -1,4 +1,4 @@
-const main = document.getElementById("main");
+const body = document.getElementById("body");
     const dtText = document.getElementById("dtText");
     const navbar = document.getElementById("navbar");
         const abtMe = document.getElementById("abtMe");
@@ -6,7 +6,7 @@ const main = document.getElementById("main");
         const contacts = document.getElementById("contacts");
 
     const content = document.getElementById("content");
-        //const scrollDisplay = document.getElementById("scroll");
+        const main = document.getElementById("main");
 
     const footer = document.getElementById("footer");
 
@@ -14,7 +14,7 @@ const main = document.getElementById("main");
 let fps = 0;
 let lastTime = 0;
 let frames = 0;
-function updateTime(time)
+function updateMarquee(time)
 {
     const deltaTime = time - lastTime;
     frames++;
@@ -28,17 +28,26 @@ function updateTime(time)
 
     dtText.innerHTML = " | Current Date & Time: " + new Date() + " | FPS: " + fps + " | ";
 
-    requestAnimationFrame(updateTime);
+    requestAnimationFrame(updateMarquee);
 }
-requestAnimationFrame(updateTime);
+requestAnimationFrame(updateMarquee);
 
 
-window.addEventListener("scroll", updateScrollPercentage);
-function updateScrollPercentage()
+
+async function fetchAndSetInnerHtml(path)
 {
-    const scrollPercent = (window.scrollY / main.clientHeight) * 100;
-    /*
-    scrollDisplay.textContent = `Scrolled: ${scrollPercent.toFixed(2)}%`;
-    scrollDisplay.style.opacity = scrollPercent > 1 ? "1" : "0";
-    */
+	try
+	{
+		await fetch(path)
+            .then(response => response.text())
+            .then(fetchedHtml => main.innerHTML = fetchedHtml);
+	}
+	catch(err)
+	{
+		console.log(err);
+	}
 }
+
+abtMe.addEventListener("click", () => fetchAndSetInnerHtml("aboutMe.html"));
+projects.addEventListener("click", () => fetchAndSetInnerHtml("projects.html"));
+contacts.addEventListener("click", () => fetchAndSetInnerHtml("contacts.html"));
